@@ -8,8 +8,8 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+      # - restore_cache:
+      #     key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
 
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
@@ -55,8 +55,8 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+      # - restore_cache:
+      #     key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
 
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
@@ -153,3 +153,4 @@ workflows:
       - macos-build-and-test:
           requires:
             - node
+            
